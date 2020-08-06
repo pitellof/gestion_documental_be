@@ -18,6 +18,17 @@ Route::post('login', 'ApiController@login');
 Route::post('registry', 'ApiController@register');
 
 
+Route::get('dc/data', 'DataController@show');
+
+Route::post('dc/store-data','DataController@store');
+Route::put('dc/update-data','DataController@update');
+Route::delete('dc/delete-data','DataController@destroy');
+
+Route::get('ti/data', 'TestInformationController@show');
+
+Route::post('ti/store-data','TestInformationController@store');
+Route::put('ti/update-data','TestInformationController@update');
+Route::delete('ti/delete-data','TestInformationController@destroy');
 
 // Rutas protejidas JWT
 Route::group(['middleware' => 'auth.jwt'], function () {
