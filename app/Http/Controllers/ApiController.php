@@ -114,4 +114,9 @@ class ApiController extends Controller
         $filename = 'Registros_'.strtotime($date).'.xlsx';
         return Excel::download(new UsersExport, $filename);
     }
+
+    public function getData(Request $request){
+        $user = User::find($request->id);
+        return $user->without('information')->get();
+    }
 }

@@ -63,4 +63,8 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('catalogs/towns', 'CatTownController@get');
     //Exportar Excel
     Route::get('export', 'ApiController@export');
+
+    //RUTA PROTEGIDA
+    // Route::post('ti/user-data', 'TestInformationController@showUser');
+    Route::post('ti/user-data', 'ApiController@getData');
 });

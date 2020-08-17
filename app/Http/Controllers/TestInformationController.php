@@ -58,6 +58,18 @@ class TestInformationController extends Controller
         return $test_information::All();
     }
 
+        /**
+     * Display the specified resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\test_information  $test_information
+     * @return \Illuminate\Http\Response
+     */
+    public function showUser(Request $request,test_information $test_information)
+    {
+        return $test_information::find($request->id)->has('user')->get();
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
